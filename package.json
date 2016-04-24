@@ -1,0 +1,51 @@
+{
+  "name": "check-es3-syntax",
+  "version": "0.0.1",
+  "description": "Check if contents of a file is es3-compatible",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "compile": "babel check.js -o index.js",
+    "lint": "eslint check.js",
+    "pretest": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "SimenB/check-es3-syntax",
+  "keywords": [
+    "es3",
+    "syntax",
+    "ie8"
+  ],
+  "author": "Simen Bekkhus <sbekkhus91@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simenb/check-es3-syntax-compatibility/issues"
+  },
+  "homepage": "https://github.com/simenb/check-es3-syntax-compatibility#readme",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "diff": "^2.2.2",
+    "es3ify": "^0.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-check-es2015-constants": "^6.7.2",
+    "babel-plugin-syntax-object-rest-spread": "^6.5.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.7.7",
+    "babel-plugin-transform-es2015-block-scoping": "^6.7.1",
+    "babel-plugin-transform-es2015-destructuring": "^6.6.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.7",
+    "babel-plugin-transform-es2015-parameters": "^6.7.0",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.5.0",
+    "babel-plugin-transform-es2015-spread": "^6.6.5",
+    "babel-plugin-transform-es2015-template-literals": "^6.6.5",
+    "babel-plugin-transform-object-rest-spread": "^6.6.5",
+    "babel-register": "^6.7.2",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb-base": "^1.0.3",
+    "eslint-plugin-import": "^1.5.0"
+  }
+}
