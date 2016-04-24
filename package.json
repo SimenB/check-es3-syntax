@@ -9,6 +9,7 @@
   "scripts": {
     "compile": "babel check.js -o index.js",
     "lint": "eslint check.js",
+    "prepublish": "npm run compile",
     "pretest": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
