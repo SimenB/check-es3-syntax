@@ -12,7 +12,7 @@ const readFile = Promise.promisify(fs.readFile);
 const writeFile = Promise.promisify(fs.writeFile);
 
 export default (files = [], { savePatchToDisk, directory } = {}) => {
-  const filesArray = Array.isArray(files) ? files : [files]
+  const filesArray = (Array.isArray(files) ? files : [files])
     .map(filename => {
       if (fs.lstatSync(filename).isDirectory()) {
         return read(filename).filter(file => path.extname(file) === '.js').map(file => path.join(filename, file));
