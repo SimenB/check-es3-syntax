@@ -28,7 +28,9 @@
   "dependencies": {
     "bluebird": "^3.3.5",
     "diff": "^2.2.2",
-    "es3ify": "^0.2.1"
+    "es3ify": "^0.2.1",
+    "fs-readdir-recursive": "^1.0.0",
+    "lodash.flatten": "^4.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
