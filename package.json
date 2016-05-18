@@ -22,9 +22,9 @@
   "author": "Simen Bekkhus <sbekkhus91@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simenb/check-es3-syntax-compatibility/issues"
+    "url": "https://github.com/simenb/check-es3-syntax/issues"
   },
-  "homepage": "https://github.com/simenb/check-es3-syntax-compatibility#readme",
+  "homepage": "https://github.com/simenb/check-es3-syntax#readme",
   "dependencies": {
     "bluebird": "^3.3.5",
     "diff": "^2.2.2",
