@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "compile": "babel check.js -o index.js",
-    "lint": "eslint check.js",
+    "lint": "eslint check.js test.js",
     "prepublish": "npm run compile",
     "pretest": "npm run lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "repository": "SimenB/check-es3-syntax",
   "keywords": [
@@ -33,7 +33,9 @@
     "lodash.flatten": "^4.2.0"
   },
   "devDependencies": {
+    "ava": "^0.15.2",
     "babel-cli": "^6.9.0",
+    "babel-eslint": "^6.0.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-check-es2015-constants": "^6.8.0",
     "babel-plugin-syntax-object-rest-spread": "^6.8.0",
@@ -47,8 +49,10 @@
     "babel-plugin-transform-es2015-template-literals": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-register": "^6.9.0",
+    "del": "^2.2.0",
     "eslint": "^2.11.1",
     "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-ava": "^2.4.0",
     "eslint-plugin-import": "^1.8.1"
   }
 }

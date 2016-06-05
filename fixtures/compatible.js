@@ -1,0 +1,1 @@
+var o = { 'class': 'name' };

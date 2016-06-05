@@ -1,6 +1,14 @@
 {
-  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "plugin:ava/recommended"
+  ],
+  "plugins": [
+    "ava"
+  ],
   "rules": {
-    "max-len": ["error", 120]
+    "max-len": ["error", 140],
+    // "ava/prefer-power-assert": "error" disable until https://github.com/avajs/eslint-plugin-ava/pull/118
   }
 }
