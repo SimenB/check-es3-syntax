@@ -7,11 +7,18 @@
     "index.js"
   ],
   "scripts": {
+    "clean": "del coverage/ .nyc_output/ index.js",
     "compile": "babel check.js -o index.js",
+    "cover": "nyc ava",
     "lint": "eslint check.js test.js",
+    "postcover": "nyc report --reporter=html",
+    "posttravis": "nyc check-coverage --lines 100 --functions 100 --branches 100 --stmts 100 ava && nyc report --reporter=lcov",
+    "pretravis": "npm run lint",
+    "precover": "npm run clean",
     "prepublish": "npm run compile",
     "pretest": "npm run lint",
-    "test": "ava"
+    "test": "ava",
+    "travis": "npm run cover"
   },
   "repository": "SimenB/check-es3-syntax",
   "keywords": [
@@ -49,10 +56,14 @@
     "babel-plugin-transform-es2015-template-literals": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-register": "^6.9.0",
+    "codeclimate-test-reporter": "^0.3.1",
+    "coveralls": "^2.11.9",
     "del": "^2.2.0",
+    "del-cli": "^0.2.0",
     "eslint": "^2.11.1",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-ava": "^2.4.0",
-    "eslint-plugin-import": "^1.8.1"
+    "eslint-plugin-import": "^1.8.1",
+    "nyc": "^6.4.4"
   }
 }

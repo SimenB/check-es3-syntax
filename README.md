@@ -2,6 +2,9 @@
 > Check if contents of a file is es3-compatible
 
 [![NPM Version][npm-image]][npm-url]
+[![Linux build Status][travis-image]][travis-url]
+[![Windows Build Status][appveyor-image]][appveyor-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 [![Codeclimate Status][codeclimate-image]][codeclimate-url]
 
 [![bitHound Dependencies][bithound-image]][bithound-url]
@@ -87,6 +90,13 @@ generated patches.
 ## CLI
 Use [`check-es3-syntax-cli`](https://www.npmjs.com/package/check-es3-syntax-cli).
 
+
+[travis-url]: https://travis-ci.org/SimenB/check-es3-syntax
+[travis-image]: https://img.shields.io/travis/SimenB/check-es3-syntax.svg
+[appveyor-url]: https://ci.appveyor.com/project/SimenB/check-es3-syntax
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/9rusr82fifik4gm3?svg=true
+[coveralls-url]: https://coveralls.io/github/SimenB/check-es3-syntax
+[coveralls-image]: https://img.shields.io/coveralls/SimenB/check-es3-syntax.svg
 [codeclimate-url]: https://codeclimate.com/github/SimenB/check-es3-syntax
 [codeclimate-image]: https://img.shields.io/codeclimate/github/SimenB/check-es3-syntax.svg
 [npm-url]: https://npmjs.org/package/check-es3-syntax
