@@ -1,0 +1,7 @@
+{
+  "name": "check-es3-syntax",
+  "dependencies": {
+    "bluebird": "registry:npm/bluebird#3.3.4+20160531224558",
+    "diff": "registry:npm/diff#2.0.0+20160211003958"
+  }
+}
