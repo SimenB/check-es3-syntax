@@ -11,18 +11,8 @@ const { transform } = es3ify;
 const readFile = Promise.promisify(fs.readFile);
 const writeFile = Promise.promisify(fs.writeFile);
 
-export default (files = [], { savePatchToDisk, directory } = {}) => {
-  const filesArray = (Array.isArray(files) ? files : [files])
-    .map(filename => {
-      if (fs.lstatSync(filename).isDirectory()) {
-        return read(filename).filter(file => path.extname(file) === '.js').map(file => path.join(filename, file));
-      }
-
-      return filename;
-    });
-
-  return Promise
-    .map(flatten(filesArray), filename => Promise.props({ content: readFile(filename, 'utf-8'), filename }))
+function checkContent(contentPromise, savePatchToDisk, directory) {
+  return contentPromise
     .map(({ content, filename }) => {
       const hash = crypto.createHash('md5').update(content).digest('hex');
       const es3Content = transform(content);
@@ -47,4 +37,27 @@ export default (files = [], { savePatchToDisk, directory } = {}) => {
 
       return Promise.resolve();
     });
-};
+}
+
+export function checkString(content, { savePatchToDisk, directory, filename = 'stringInput' } = {}) {
+  return checkContent(Promise.resolve([Promise.props({ content, filename })]), savePatchToDisk, directory)
+    .spread(res => res); // Unwrap the array, as it's only ever one result
+}
+
+export default function (files = [], { savePatchToDisk, directory } = {}) {
+  const filesArray = (Array.isArray(files) ? files : [files])
+    .map(filename => {
+      if (fs.lstatSync(filename).isDirectory()) {
+        return read(filename).filter(file => path.extname(file) === '.js').map(file => path.join(filename, file));
+      }
+
+      return filename;
+    });
+
+  const readFilesAsPromise = Promise.map(flatten(filesArray), filename => Promise.props({
+    content: readFile(filename, 'utf-8'),
+    filename,
+  }));
+
+  return checkContent(readFilesAsPromise, savePatchToDisk, directory);
+}

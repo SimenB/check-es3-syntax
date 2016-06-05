@@ -11,12 +11,16 @@
 
 ## Usage
 
-The module exports a single function accepting an array of filenames, and
-returns a promise resolved with an array of the same files if they are
-transformed by [es3ify][es3ify-url].
+The module exports 2 functions:
+
+* a default function accepting an array of filenames, and returns a promise
+  resolved with an array of the same files if they are transformed by
+  [es3ify][es3ify-url]
+* a named function `checkString`, which takes a string as it's first argument,
+  and performs the same check, but only returns a single result
 
 ```js
-import checkEs3Syntax from 'check-es3-syntax';
+import checkEs3Syntax, { checkString } from 'check-es3-syntax';
 
 checkEs3Syntax(['filename1.js', 'filename2.js'])
     .then(arr => {
@@ -25,13 +29,19 @@ checkEs3Syntax(['filename1.js', 'filename2.js'])
         console.log(res.textDiff);
       });
     });
+
+checkString('var o = { class: "Name" }')
+    .then(res => {
+        console.log(res.filename);
+        console.log(res.textDiff);
+    });
 ```
 
 The promise returned is a [bluebird promise][bluebird-url], so you can use all
 the sugar it provides, like `map`, `filter` and `each`.
 
-The resolved array contains objects with
-diffs using [jsdiff][jsdiff-url], and have the following structure:
+The resolved array contains objects with diffs using [jsdiff][jsdiff-url], and
+have the following structure:
 
 ```js
 const returnValues = {
@@ -45,10 +55,15 @@ const returnValues = {
 Options are the second argument provided to `checkEs3Syntax`.
 
 ```js
-import checkEs3Syntax from 'check-es3-syntax';
+import checkEs3Syntax, { checkString } from 'check-es3-syntax';
 
 checkEs3Syntax(['filename1.js', 'filename2.js'], { savePatchToDisk: true, directory: process.cwd() })
     .then(arr => {
+      // ...
+    });
+
+checkString('var o = { class: "Name" }', { savePatchToDisk: true, directory: process.cwd(), filename: 'some file name' })
+    .then(res => {
       // ...
     });
 ```
@@ -62,6 +77,12 @@ Whether or not to save the patch file to disk.
 Type: `string`, default: `undefined`
 
 If `savePatchToDisk` is set, this is the directory the file is saved to.
+
+#### `filename`
+Type: `string`, default: `inputString`
+
+Only available when using `checkString`, this is the name used in the diffs and
+generated patches.
 
 ## CLI
 Use [`check-es3-syntax-cli`](https://www.npmjs.com/package/check-es3-syntax-cli).
