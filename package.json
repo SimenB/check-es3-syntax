@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/simenb/check-es3-syntax#readme",
   "dependencies": {
-    "bluebird": "^3.4.0",
+    "bluebird": "^3.4.1",
     "diff": "^2.2.3",
     "es3ify": "^0.2.2",
     "fs-readdir-recursive": "^1.0.0",
