@@ -1,3 +1,5 @@
+/* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true }]*/
+
 import fs from 'fs';
 import path from 'path';
 import os from 'os';

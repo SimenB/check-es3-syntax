@@ -10,7 +10,7 @@
     "clean": "del coverage/ .nyc_output/ index.js",
     "compile": "babel check.js -o index.js",
     "cover": "nyc ava",
-    "lint": "eslint check.js test.js",
+    "lint": "node-version-gte-4 && eslint . || node-version-lt-4",
     "postcover": "nyc report --reporter=html",
     "posttravis": "nyc check-coverage --lines 100 --functions 100 --branches 100 --stmts 100 ava && nyc report --reporter=lcov",
     "pretravis": "npm run lint",
@@ -60,10 +60,11 @@
     "coveralls": "^2.11.9",
     "del": "^2.2.0",
     "del-cli": "^0.2.0",
-    "eslint": "^2.11.1",
-    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
     "eslint-plugin-ava": "^2.4.0",
-    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-import": "^1.10.2",
+    "node-version-check": "^1.0.1",
     "nyc": "^6.4.4"
   }
 }
