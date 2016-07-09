@@ -42,7 +42,7 @@
   "devDependencies": {
     "ava": "^0.15.2",
     "babel-cli": "^6.9.0",
-    "babel-eslint": "^6.0.4",
+    "babel-eslint": "^6.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-check-es2015-constants": "^6.8.0",
     "babel-plugin-syntax-object-rest-spread": "^6.8.0",
