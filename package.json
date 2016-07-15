@@ -61,9 +61,9 @@
     "del": "^2.2.0",
     "del-cli": "^0.2.0",
     "eslint": "^3.0.1",
-    "eslint-config-airbnb-base": "^4.0.0",
+    "eslint-config-airbnb-base": "^4.0.2",
     "eslint-plugin-ava": "^2.4.0",
-    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-import": "^1.10.3",
     "node-version-check": "^2.0.2",
     "nyc": "^7.0.0"
   }
