@@ -63,7 +63,7 @@
     "eslint": "^3.0.1",
     "eslint-config-airbnb-base": "^4.0.2",
     "eslint-plugin-ava": "^2.4.0",
-    "eslint-plugin-import": "^1.10.3",
+    "eslint-plugin-import": "^1.11.1",
     "node-version-check": "^2.0.2",
     "nyc": "^7.0.0"
   }
