@@ -42,7 +42,6 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.11.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-check-es2015-constants": "^6.8.0",
     "babel-plugin-syntax-object-rest-spread": "^6.8.0",
     "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
@@ -64,5 +63,10 @@
     "eslint-config-simenb-base": "^2.0.0",
     "node-version-check": "^2.0.2",
     "nyc": "^7.1.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
   }
 }

@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "add-module-exports",
     "check-es2015-constants",
     "syntax-object-rest-spread",
     "transform-es2015-template-literals",

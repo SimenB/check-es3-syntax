@@ -6,7 +6,6 @@ import os from 'os';
 import test from 'ava';
 import Promise from 'bluebird';
 import del from 'del';
-import 'babel-register';
 import checkEs3Syntax, { checkString } from './check';
 
 const fixturesDirectory = path.resolve('./fixtures');

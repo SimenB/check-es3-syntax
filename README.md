@@ -19,6 +19,8 @@ The module exports 2 functions:
 * a default function accepting an array of filenames, and returns a promise
   resolved with an array of the same files if they are transformed by
   [es3ify][es3ify-url]
+
+  * Note that if you're using CommonJS, you have to do `require('check-es3-syntax').default;`
 * a named function `checkString`, which takes a string as it's first argument,
   and performs the same check, but only returns a single result
 
