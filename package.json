@@ -62,7 +62,7 @@
     "eslint-config-simenb-ava": "^2.0.0",
     "eslint-config-simenb-base": "^2.0.1",
     "node-version-check": "^2.1.0",
-    "nyc": "^7.1.0"
+    "nyc": "^8.1.0"
   },
   "ava": {
     "require": [
