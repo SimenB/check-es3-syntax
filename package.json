@@ -54,7 +54,7 @@
     "babel-plugin-transform-es2015-template-literals": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-register": "^6.11.6",
-    "codeclimate-test-reporter": "^0.3.3",
+    "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.12",
     "del": "^2.2.1",
     "del-cli": "^0.2.0",
