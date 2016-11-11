@@ -59,7 +59,7 @@
     "del": "^2.2.2",
     "del-cli": "^0.2.0",
     "eslint": "^3.8.0",
-    "eslint-config-simenb-ava": "^5.0.3",
+    "eslint-config-simenb-ava": "^6.0.0",
     "eslint-config-simenb-base": "^8.0.0",
     "node-version-check": "^2.1.1",
     "nyc": "^8.3.1"
