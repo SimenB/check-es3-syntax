@@ -10,7 +10,7 @@
     "clean": "del coverage/ .nyc_output/ index.js",
     "compile": "babel check.js -o index.js",
     "cover": "nyc ava",
-    "lint": "node-version-gte-4 && eslint . || node-version-lt-4",
+    "lint": "eslint .",
     "postcover": "nyc report --reporter=html",
     "posttravis": "nyc check-coverage --lines 100 --functions 100 --branches 100 --stmts 100 ava && nyc report --reporter=lcov",
     "pretravis": "npm run lint",
@@ -58,10 +58,9 @@
     "coveralls": "^2.11.14",
     "del": "^2.2.2",
     "del-cli": "^0.2.0",
-    "eslint": "^3.8.0",
+    "eslint": "^3.9.1",
     "eslint-config-simenb-ava": "^6.0.0",
     "eslint-config-simenb-base": "^8.0.0",
-    "node-version-check": "^2.1.1",
     "nyc": "^8.3.1"
   },
   "ava": {
