@@ -40,7 +40,7 @@
     "lodash.flatten": "^4.4.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "babel-cli": "^6.16.0",
     "babel-plugin-check-es2015-constants": "^6.8.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
