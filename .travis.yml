@@ -9,8 +9,6 @@ os:
 osx_image: xcode7.3
 matrix:
   fast_finish: true
-before_install: npm install -g yarn
-install: yarn install
 script: yarn run travis
 addons:
   code_climate:
