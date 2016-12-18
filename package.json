@@ -57,6 +57,7 @@
     "del-cli": "^0.2.0",
     "eslint": "^3.12.2",
     "eslint-config-simenb-base": "^9.0.0",
+    "flow-bin": "^0.37.0",
     "jest": "^18.0.0"
   },
   "jest": {
