@@ -1,6 +1,6 @@
 {
   "name": "check-es3-syntax",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Check if contents of a file is es3-compatible",
   "main": "index.js",
   "files": [
