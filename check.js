@@ -35,7 +35,7 @@ function checkContent(contentPromise, savePatchToDisk, directory) {
       textDiff: diffChars(content, es3Content),
     }))
     .tap(arr => {
-      if (savePatchToDisk) return arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch));
+      if (savePatchToDisk) return Promise.all(arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch)));
 
       return Promise.resolve();
     });
