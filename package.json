@@ -55,8 +55,8 @@
     "coveralls": "^2.11.14",
     "del": "^2.2.2",
     "del-cli": "^0.2.0",
-    "eslint": "^3.12.2",
-    "eslint-config-simenb-base": "^9.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-simenb-base": "^10.0.0",
     "flow-bin": "^0.38.0",
     "jest": "^19.0.0"
   },
