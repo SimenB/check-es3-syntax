@@ -10,7 +10,6 @@
 [![bitHound Dependencies][bithound-image]][bithound-url]
 [![Dependency Status][david-image]][david-url]
 [![Dev Dependency Status][david-dev-image]][david-dev-url]
-[![Peer Dependency Status][david-peer-image]][david-peer-url]
 [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
 ## Usage
@@ -108,10 +107,8 @@ Use [`check-es3-syntax-cli`](https://www.npmjs.com/package/check-es3-syntax-cli)
 [bithound-image]: https://www.bithound.io/github/SimenB/check-es3-syntax/badges/dependencies.svg
 [david-url]: https://david-dm.org/SimenB/check-es3-syntax
 [david-image]: https://img.shields.io/david/SimenB/check-es3-syntax.svg
-[david-dev-url]: https://david-dm.org/SimenB/check-es3-syntax#info=devDependencies
+[david-dev-url]: https://david-dm.org/SimenB/check-es3-syntax?type=dev
 [david-dev-image]: https://img.shields.io/david/dev/SimenB/check-es3-syntax.svg
-[david-peer-url]: https://david-dm.org/SimenB/check-es3-syntax#info=peerDependencies
-[david-peer-image]: https://img.shields.io/david/peer/SimenB/check-es3-syntax.svg
 [greenkeeper-url]: https://greenkeeper.io/
 [greenkeeper-image]: https://badges.greenkeeper.io/SimenB/check-es3-syntax.svg
 [jsdiff-url]: https://github.com/kpdecker/jsdiff
