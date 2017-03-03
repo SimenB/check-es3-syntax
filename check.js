@@ -35,26 +35,27 @@ function checkContent(contentPromise, savePatchToDisk, directory) {
       textDiff: diffChars(content, es3Content),
     }))
     .tap(arr => {
-      if (savePatchToDisk) return Promise.all(arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch)));
+      if (savePatchToDisk) {
+        return Promise.all(arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch)));
+      }
 
       return Promise.resolve();
     });
 }
 
 export function checkString(content, { savePatchToDisk, directory, filename = 'stringInput' } = {}) {
-  return checkContent(Promise.resolve([Promise.props({ content, filename })]), savePatchToDisk, directory)
-    .spread(res => res); // Unwrap the array, as it's only ever one result
+  // Unwrap the array, as it's only ever one result
+  return checkContent(Promise.resolve([Promise.props({ content, filename })]), savePatchToDisk, directory).spread(res => res);
 }
 
-export default function (files = [], { savePatchToDisk, directory } = {}) {
-  const filesArray = (Array.isArray(files) ? files : [files])
-    .map(filename => {
-      if (fs.lstatSync(filename).isDirectory()) {
-        return read(filename).filter(file => path.extname(file) === '.js').map(file => path.join(filename, file));
-      }
+export default function(files = [], { savePatchToDisk, directory } = {}) {
+  const filesArray = (Array.isArray(files) ? files : [files]).map(filename => {
+    if (fs.lstatSync(filename).isDirectory()) {
+      return read(filename).filter(file => path.extname(file) === '.js').map(file => path.join(filename, file));
+    }
 
-      return filename;
-    });
+    return filename;
+  });
 
   const readFilesAsPromise = Promise.map(flatten(filesArray), filename => Promise.props({
     content: readFile(filename, 'utf-8'),
