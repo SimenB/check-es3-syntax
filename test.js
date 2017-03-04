@@ -25,13 +25,13 @@ afterAll(() => del('*.patch'));
 test.concurrent('should return empty array if no errors in files', async () => {
   const res = await checkEs3Syntax(path.join(fixturesDirectory, 'compatible.js'));
 
-  expect(res.length).toBe(0);
+  expect(res).toHaveLength(0);
 });
 
 test.concurrent('should return empty array if no files', async () => {
   const res = await checkEs3Syntax();
 
-  expect(res.length).toBe(0);
+  expect(res).toHaveLength(0);
 });
 
 test.concurrent('should return undefined if no errors in  string', async () => {
@@ -43,21 +43,21 @@ test.concurrent('should return undefined if no errors in  string', async () => {
 test.concurrent('should return error in file', async () => {
   const res = await checkEs3Syntax(path.join(fixturesDirectory, 'notCompatible.js'));
 
-  expect(res.length).toBe(1);
+  expect(res).toHaveLength(1);
   expect(res[0].textDiff).toEqual(errorReturn);
 });
 
 test.concurrent('should return error in array of files', async () => {
   const res = await checkEs3Syntax([path.join(fixturesDirectory, 'notCompatible.js')]);
 
-  expect(res.length).toBe(1);
+  expect(res).toHaveLength(1);
   expect(res[0].textDiff).toEqual(errorReturn);
 });
 
 test.concurrent('should return error in directory', async () => {
   const res = await checkEs3Syntax(fixturesDirectory);
 
-  expect(res.length).toBe(2);
+  expect(res).toHaveLength(2);
   expect(res[0].textDiff).toEqual(errorReturn);
   expect(res[1].textDiff).toEqual(errorReturn);
 });
@@ -73,7 +73,7 @@ test.concurrent('should print patch from file to file if error, and enabled', as
 
   const fileContent = await readFile('./notCompatible.js.patch');
 
-  expect(fileContent).not.toBeUndefined();
+  expect(fileContent).toBeTruthy();
 });
 
 test('should print patch from string to file if error, and enabled', async () => {
@@ -81,7 +81,7 @@ test('should print patch from string to file if error, and enabled', async () =>
 
   const fileContent = await readFile('./stringInput.patch');
 
-  expect(fileContent).not.toBeUndefined();
+  expect(fileContent).toBeTruthy();
 });
 
 test('should print patch from string to file if error, and enabled with custom name', async () => {
@@ -89,5 +89,5 @@ test('should print patch from string to file if error, and enabled with custom n
 
   const fileContent = await readFile('./meep.patch');
 
-  expect(fileContent).not.toBeUndefined();
+  expect(fileContent).toBeTruthy();
 });
