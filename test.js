@@ -69,7 +69,10 @@ test.concurrent('should return error in string', async () => {
 });
 
 test.concurrent('should print patch from file to file if error, and enabled', async () => {
-  await checkEs3Syntax(path.join(fixturesDirectory, 'notCompatible.js'), { savePatchToDisk: true, directory: process.cwd() });
+  await checkEs3Syntax(path.join(fixturesDirectory, 'notCompatible.js'), {
+    savePatchToDisk: true,
+    directory: process.cwd(),
+  });
 
   const fileContent = await readFile('./notCompatible.js.patch');
 
@@ -85,7 +88,11 @@ test('should print patch from string to file if error, and enabled', async () =>
 });
 
 test('should print patch from string to file if error, and enabled with custom name', async () => {
-  await checkString("var o = { class: 'name' };\n", { savePatchToDisk: true, directory: process.cwd(), filename: 'meep' });
+  await checkString("var o = { class: 'name' };\n", {
+    savePatchToDisk: true,
+    directory: process.cwd(),
+    filename: 'meep',
+  });
 
   const fileContent = await readFile('./meep.patch');
 

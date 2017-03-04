@@ -36,7 +36,9 @@ function checkContent(contentPromise, savePatchToDisk, directory) {
     }))
     .tap(arr => {
       if (savePatchToDisk) {
-        return Promise.all(arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch)));
+        return Promise.all(
+          arr.map(res => writeFile(path.join(directory, `${path.basename(res.filename)}.patch`), res.patch))
+        );
       }
 
       return Promise.resolve();
@@ -45,7 +47,9 @@ function checkContent(contentPromise, savePatchToDisk, directory) {
 
 export function checkString(content, { savePatchToDisk, directory, filename = 'stringInput' } = {}) {
   // Unwrap the array, as it's only ever one result
-  return checkContent(Promise.resolve([Promise.props({ content, filename })]), savePatchToDisk, directory).spread(res => res);
+  return checkContent(Promise.resolve([Promise.props({ content, filename })]), savePatchToDisk, directory).spread(
+    res => res
+  );
 }
 
 export default function(files = [], { savePatchToDisk, directory } = {}) {
