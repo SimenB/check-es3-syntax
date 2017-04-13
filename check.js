@@ -29,11 +29,13 @@ function checkContent(contentPromise, savePatchToDisk, directory) {
       });
     })
     .filter(({ hash, es3Hash }) => hash !== es3Hash)
-    .map(({ filename, content, es3Content }) => Promise.props({
-      filename,
-      patch: createPatch(filename, content, es3Content),
-      textDiff: diffChars(content, es3Content),
-    }))
+    .map(({ filename, content, es3Content }) =>
+      Promise.props({
+        filename,
+        patch: createPatch(filename, content, es3Content),
+        textDiff: diffChars(content, es3Content),
+      })
+    )
     .tap(arr => {
       if (savePatchToDisk) {
         return Promise.all(
@@ -61,10 +63,12 @@ export default function(files = [], { savePatchToDisk, directory } = {}) {
     return filename;
   });
 
-  const readFilesAsPromise = Promise.map(flatten(filesArray), filename => Promise.props({
-    content: readFile(filename, 'utf-8'),
-    filename,
-  }));
+  const readFilesAsPromise = Promise.map(flatten(filesArray), filename =>
+    Promise.props({
+      content: readFile(filename, 'utf-8'),
+      filename,
+    })
+  );
 
   return checkContent(readFilesAsPromise, savePatchToDisk, directory);
 }
