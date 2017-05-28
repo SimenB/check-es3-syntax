@@ -10,7 +10,7 @@
     "clean": "del coverage/ index.js",
     "compile": "babel check.js -o index.js",
     "cover": "jest --coverage",
-    "lint": "eslint .",
+    "lint": "eslint . && flow",
     "pretravis": "npm run lint",
     "precover": "npm run clean",
     "prepublish": "npm run compile",
@@ -57,7 +57,7 @@
     "del-cli": "^1.0.0",
     "eslint": "^3.16.1",
     "eslint-config-simenb-base": "^12.0.0",
-    "flow-bin": "^0.46.0",
+    "flow-bin": "^0.47.0",
     "jest": "^20.0.1",
     "prettier": "^1.0.1"
   },
