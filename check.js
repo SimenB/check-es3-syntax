@@ -12,7 +12,10 @@ const readFile = Promise.promisify(fs.readFile);
 const writeFile = Promise.promisify(fs.writeFile);
 
 const hashString = string =>
-  crypto.createHash('md5').update(string).digest('hex');
+  crypto
+    .createHash('md5')
+    .update(string)
+    .digest('hex');
 
 function checkContent(contentPromise, savePatchToDisk, directory) {
   return contentPromise
