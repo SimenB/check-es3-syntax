@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - stable
+  - 8
   - 6
   - 4
 os:
@@ -9,6 +10,7 @@ os:
 osx_image: xcode7.3
 matrix:
   fast_finish: true
+install: yarn install --ignore-engines
 script: yarn run travis
 addons:
   code_climate:
