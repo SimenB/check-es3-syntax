@@ -59,7 +59,7 @@
     "eslint-config-simenb-base": "^14.0.0",
     "flow-bin": "^0.79.0",
     "jest": "^22.0.4",
-    "prettier": "^1.0.1"
+    "prettier": "^1.16.1"
   },
   "jest": {
     "testEnvironment": "node",
